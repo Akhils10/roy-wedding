@@ -1,0 +1,106 @@
+@import "@/styles/imports";
+
+.barcodeScanner {
+	width: 100%;
+	min-height: 50dvh;
+	padding: 0 6.4rem;
+	margin-bottom: 7.2rem;
+	@include flex(flex-start, center, column);
+
+	.header {
+		max-width: 87rem;
+		margin: 2rem auto;
+
+		h3 {
+			@extend %title-40;
+			font-weight: 800;
+			text-align: center;
+		}
+
+		p {
+			@extend %text-24;
+			font-weight: 600;
+			text-align: center;
+		}
+	}
+
+	.container {
+		width: 40rem;
+		height: 40rem;
+		margin: 0 auto;
+
+		.button {
+			margin: 1rem auto;
+			border-radius: 0.2rem;
+			border: 0.1rem solid $col-purple-primary;
+			background: #fff;
+			color: $col-primary-text;
+		}
+	}
+
+	.error,
+	.loading {
+		@extend %text-24;
+		color: #000;
+	}
+
+	.error {
+		color: #f00;
+	}
+
+	@include screenMax("mobile") {
+		padding: 0;
+		.header {
+			h3 {
+				font-size: 2.4rem;
+				line-height: 3.1rem;
+			}
+
+			p {
+				font-weight: 400;
+				text-align: center;
+			}
+		}
+
+		.container {
+			width: 100%;
+		}
+
+		.guestCard {
+			max-width: 100%;
+		}
+	}
+}
+
+.guestCard {
+	margin-top: 2rem;
+	border: 0.1rem solid #ccc;
+	border-radius: 8px;
+	padding: 2rem;
+	width: 100%;
+	max-width: 50rem;
+	text-align: left;
+
+	h3 {
+		margin-bottom: 1rem;
+		@extend %title-24;
+	}
+
+	p {
+		margin: 0.5rem 0;
+		@extend %text-24;
+		strong {
+			display: inline-block;
+			width: 12rem;
+		}
+	}
+
+	.button {
+		width: 100%;
+		border-radius: 0.2rem;
+	}
+
+	@include screenMax("mobile") {
+		max-width: 100%;
+	}
+}

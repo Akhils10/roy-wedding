@@ -1,0 +1,19 @@
+@import "@/styles/imports";
+
+.button {
+	@extend %btn;
+	padding: 0.8rem 2rem;
+	background: #285d2d;
+    border-radius: 0.1rem;
+	border: 0.1rem solid #285d2d;
+    margin: 0 auto;
+
+	.text {
+		font-weight: 800;
+		font-size: 1.6rem;
+		line-height: 2rem;
+		color: #fff;
+		text-transform: capitalize;
+		text-align: center;
+	}
+}

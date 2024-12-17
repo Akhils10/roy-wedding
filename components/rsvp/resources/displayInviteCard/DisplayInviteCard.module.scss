@@ -1,0 +1,50 @@
+@import "@/styles/imports";
+
+.container {
+	position: relative;
+	width: 432px;
+	height: 612px;
+	background: url('/resources/invitation-card.png');
+	background-position: center;
+	background-size: cover;
+	// left: -9999px;
+	// top: -9999px;
+	// visibility: hidden;
+	overflow: hidden;
+
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.name {
+		position: absolute;
+		top: 37.5%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background-color: transparent;
+		width: 100%;
+		white-space: nowrap;
+
+		h3 {
+			font-size: 2.4rem;
+			line-height: 3.1rem;
+			color: #fcf4dc;
+			text-align: center;
+			font-weight: 800;
+			text-shadow: 5px 5px 5px #000;
+		}
+	}
+
+	.logoOverlay {
+		position: absolute;
+		top: 74.5%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 65px;
+		height: 65px;
+		background-color: #fcf4dc;
+		padding: 2px;
+	}
+}

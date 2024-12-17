@@ -1,0 +1,85 @@
+@import "@/styles/imports";
+
+.section {
+	@include flex(flex-start, flex-start, column);
+	gap: 2.4rem;
+    width: 100%;
+
+	.item {
+		@include flex(center, center, row);
+		gap: 13rem;
+		width: 100%;
+
+		&[data-reversed="true"] {
+			flex-direction: row-reverse;
+		}
+
+		.image {
+			width: 56rem;
+			height: 72rem;
+			position: relative;
+
+			img {
+				object-fit: cover;
+			}
+		}
+
+		.content {
+			@include flex(flex-start, center, column);
+			padding: 1rem;
+			gap: 1.6rem;
+			border: 0.2rem solid #333C5580;
+			max-width: 46rem;
+
+			.title {
+				@include flex(flex-start, center, column);
+				h3 {
+					@extend %title-40;
+					text-align: center;
+				}
+
+				span {
+					@extend %text-24;
+					font-weight: 600;
+					text-align: center;
+				}
+			}
+
+			.info {
+				@include flex(flex-start, center, column);
+				padding: 1rem;
+				border: 0.1rem solid #00000080;
+                width: 100%;
+                
+				h3 {
+					@extend %title-24;
+					font-weight: 700;
+					text-align: center;
+				}
+				span {
+					@extend %title-24;
+					font-weight: 400;
+					text-align: justify;
+				}
+			}
+		}
+	}
+
+	@include screenMax("mobile") {
+		.item {
+			gap: 1rem;
+
+			.image {
+                display: none;
+				width: 16.1rem;
+				height: 37.4rem;
+			}
+
+			.content {
+				gap: 1rem;
+                width: 100%;
+				max-width: none;
+			}
+		}
+	}
+}

@@ -1,0 +1,85 @@
+@import "@/styles/imports";
+
+.container {
+	@include flex(center, center, column);
+	max-width: 92.3rem;
+	gap: 2.6rem;
+
+	.title {
+		span {
+			font-size: 4rem;
+			font-weight: 600;
+			line-height: 5rem;
+			text-align: center;
+		}
+	}
+
+	.input_group {
+		@include flex(center, center, column);
+        width: 100%;
+		gap: 4rem;
+		padding-bottom: 8rem;
+
+		input {
+			width: 100%;
+			padding: 1rem 1.6rem;
+            border: 1px solid #285D2D;
+            border-radius: 0.4rem;
+            height: 7.2rem;
+
+			&::placeholder {
+				font-size: 2.4rem;
+				color: #285d2d80;
+				font-weight: 400;
+			}
+
+			color: #000000;
+			font-size: 2.4rem;
+			font-weight: 400;
+		}
+
+		.button {
+			width: 100%;
+			font-weight: 600;
+			font-size: 2.4rem;
+            line-height: 3.1rem;
+            height: 7.2rem;
+		}
+	}
+
+	@include screenMax("mobile") {
+		width: 100%;
+		max-width: 100%;
+        gap: 2rem;
+
+        .title {
+            span {
+                font-size: 1.6rem;
+                line-height: 1.8rem;
+            }
+        }
+        .input_group {
+            gap: 2rem;
+            input {
+                padding: 1rem;
+                border: 1px solid #285D2D;
+                border-radius: 0.4rem;
+                height: 5rem;
+    
+                &::placeholder {
+                    font-size: 1.4rem;
+                    color: #285d2d80;
+                }
+    
+                color: #285d2d80;
+                font-size: 1.4rem;
+                font-weight: 600;
+            }
+            .button {
+                font-size: 1.4rem;
+                line-height: 1.8rem;
+                height: 5rem;
+            }
+        }
+	}
+}

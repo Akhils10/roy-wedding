@@ -1,0 +1,28 @@
+@import "@/styles/imports";
+
+.header {
+    max-width: 87rem;
+    margin: 0 auto;
+
+	h3 {
+		@extend %title-40;
+		text-align: center;
+	}
+
+	p {
+		@extend %text-24;
+		font-weight: 600;
+		text-align: center;
+	}
+
+    @include screenMax('mobile') {
+		h3 {
+			display: none;
+		}
+	
+		p {
+			font-weight: 400;
+			text-align: center;
+		}
+    }
+}

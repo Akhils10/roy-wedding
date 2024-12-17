@@ -1,0 +1,217 @@
+@import "@/styles/imports";
+
+.header {
+	width: 100%;
+	padding: 6.4rem 6.4rem 4.8rem 6.4rem;
+	background-color: $col-white;
+
+	.mobile_header {
+		display: none;
+	}
+
+	.hero_container {
+		display: none;
+	}
+	.text_logo {
+		.logo_text {
+			font-family: "Princess Sofia", cursive;
+			font-size: 1.8rem;
+			line-height: 1.8rem;
+			font-weight: bold;
+		}
+	}
+	.container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		gap: 4.8rem;
+
+		.logo_container {
+			@include flex(center, center);
+			flex-direction: column;
+
+			.logo {
+				position: relative;
+				width: 96.2rem;
+				height: 40.2rem;
+			}
+
+			.logo_text {
+				@extend %header-logo;
+			}
+
+			.header_text {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				span {
+					font-size: 3.6rem;
+					font-weight: 600;
+					line-height: 4.6rem;
+				}
+			}
+		}
+		.nav {
+			position: sticky;
+			top: 0;
+			z-index: 1000;
+			padding: 0 3.2rem;
+
+			.nav_container {
+				position: sticky;
+				top: 0;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: row;
+				gap: 3.6rem;
+				max-height: 2.4rem;
+
+				.nav_item {
+					min-width: 11.4rem;
+					text-align: center;
+					white-space: nowrap;
+
+					a {
+						text-decoration: none;
+						font-size: 2rem;
+						line-height: 2.6rem;
+						font-weight: 600;
+					}
+
+					&[data-active="true"] {
+						a {
+							text-decoration: underline;
+							line-height: 3.1rem;
+							font-weight: 800;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@include screenMax("mobile") {
+		padding: 0;
+
+		.mobile_header {
+			position: relative;
+			display: block;
+			width: 100%;
+
+			.small_row {
+				height: 5.8rem;
+				padding: 1rem;
+				@include flex(space-between, center);
+				background: #cccccc;
+
+				.logo {
+					position: relative;
+					width: 5.5rem;
+					height: 1.6rem;
+					padding: 1rem;
+				}
+
+				.hamburger {
+					position: relative;
+					width: 3.2rem;
+					height: 3.2rem;
+				}
+			}
+
+			.mobile_nav {
+				position: absolute;
+				top: 0;
+				width: 100%;
+				height: 100dvh;
+				z-index: 100;
+				transition: transform 0.3s ease-in-out;
+				background-image: url("../../../public/home/couple-home-2.jpg");
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-position: center;
+
+				.close_area {
+					position: relative;
+					padding: 1.3rem;
+					height: 5.8rem;
+				}
+
+				.nav_content {
+					@include flex(flex-start, flex-start, column);
+					height: 100%;
+					width: 100%;
+					background-color: rgba(#ffffff, 0.7);
+
+					.nav_content_group {
+						height: 100%;
+						width: 100%;
+						@include flex(space-between, center, column);
+
+						.nav_container {
+							@include flex(flex-start, center, column);
+							gap: 3.2rem;
+
+							.nav_item {
+								text-align: center;
+								white-space: nowrap;
+
+								a {
+									text-decoration: none;
+									font-size: 2rem;
+									line-height: 2.6rem;
+									font-weight: 600;
+								}
+
+								&[data-active="true"] {
+									a {
+										text-decoration: underline;
+										line-height: 3.1rem;
+										font-weight: 800;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.hero_container {
+			display: block;
+			position: relative;
+			width: 100%;
+			height: 50rem;
+			margin-bottom: 3rem;
+			
+			img {
+				object-fit: cover;
+				height: 100%;
+				width: 100%;
+			}
+		}
+		.container {
+			.logo_container {
+				.logo {
+					width: 20rem;
+					height: 8.2rem;
+				}
+
+				.logo_text {
+					font-size: 4.2rem;
+					line-height: 5.5rem;
+				}
+				.header_text {
+					span {
+						font-size: 1.6rem;
+						line-height: 1.6rem;
+					}
+				}
+			}
+			.nav {
+				display: none;
+			}
+		}
+	}
+}

@@ -1,0 +1,98 @@
+@import "@/styles/imports";
+
+.container {
+	width: 100%;
+	padding: 6.4rem 6.4rem 4.8rem 6.4rem;
+	background-color: $col-white;
+	@include flex(center, center);
+	gap: 9.3rem;
+
+	&[data-reverse="true"] {
+		flex-direction: row-reverse;
+	}
+
+	.story_image {
+		flex: 1;
+		position: relative;
+		width: 58.7rem;
+		height: 96.2rem;
+		// overflow: hidden;
+
+		img {
+			height: 100%;
+			width: 100%;
+			object-fit: cover;
+		}
+
+		.secondaryImage_overlay {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			border: 0.2rem solid $col-purple-primary;
+
+			.secondary_image {
+				position: relative;
+				width: 12rem;
+				height: 10rem;
+
+				img {
+					height: 100%;
+					width: 100%;
+					object-fit: cover;
+				}
+			}
+		}
+	}
+
+	.story {
+		flex: 1;
+		@include flex(flex-start, center, column);
+		gap: 2.4rem;
+		border: 0.3rem solid #0000004d;
+		padding: 1rem;
+
+		h3 {
+			@extend %title-40;
+			text-decoration: underline;
+		}
+
+		p {
+			@extend %text-24;
+
+			strong {
+				font-weight: 600;
+			}
+		}
+	}
+
+	@include screenMax("mobile") {
+		gap: 1.3rem;
+		padding: 2.4rem;
+		flex-direction: column;
+
+		&[data-reverse="true"] {
+			flex-direction: column;
+		}
+
+		.story_image {
+			margin-inline: -2.4rem;
+
+			flex: none;
+			width: 100%;
+			height: 50vh;
+
+			.secondaryImage_overlay {
+				border: 0.2rem solid $col-purple-primary;
+	
+				.secondary_image {
+					width: 8rem;
+					height: 7rem;
+				}
+			}
+		}
+
+		.story {
+			border: none;
+		}
+	}
+}

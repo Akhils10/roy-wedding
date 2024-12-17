@@ -1,0 +1,83 @@
+@import "@/styles/imports";
+
+.container {
+	width: 100%;
+	padding: 0 6.4rem;
+	.header {
+		max-width: 87rem;
+		margin: 2rem auto;
+
+		h3 {
+			font-size: 4rem;
+			font-weight: 800;
+			line-height: 5rem;
+			text-align: center;
+		}
+
+		p {
+			font-size: 2.4rem;
+			font-weight: 600;
+			line-height: 3rem;
+			text-align: center;
+		}
+	}
+
+	.form_container {
+		width: 100%;
+		@include flex(flex-start, center, column);
+		gap: 4rem;
+		width: 100%;
+
+		.form_group {
+			@include flex(flex-start, center, row wrap);
+			width: 100%;
+			gap: 1rem;
+			border: 0.1rem solid #285d2d80;
+			padding: 1rem;
+
+			.input {
+				padding: 1rem 1.6rem;
+				border: 0.1rem solid #285d2d;
+				border-radius: 0.4rem;
+				height: 5rem;
+
+				&::placeholder {
+					color: #285d2d80;
+					font-weight: 400;
+				}
+
+				color: #000000;
+				font-size: 1.4rem;
+				font-weight: 400;
+			}
+			.button {
+				font-weight: 600;
+				@extend %text-14;
+				height: 5rem;
+			}
+		}
+		.button_submit {
+			width: 100%;
+			font-weight: 600;
+			@extend %text-14;
+			height: 5rem;
+		}
+	}
+
+	@include screenMax("mobile") {
+		padding: 0;
+		.header {
+			h3 {
+				font-size: 2.4rem;
+				line-height: 3.1rem;
+			}
+
+			p {
+				font-size: 1.4rem;
+				font-weight: 400;
+				line-height: 1.8rem;
+				text-align: center;
+			}
+		}
+	}
+}

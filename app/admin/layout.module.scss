@@ -1,0 +1,24 @@
+@import "@/styles/imports";
+
+.container {
+	@include flex(flex-start, center, column);
+    gap: 2.4rem;
+	opacity: 1;
+
+	&[data-loaded="true"] {
+		opacity: 1;
+	}
+
+	.content {
+		width: 100%;
+		position: relative;
+		transition: $all-transition;
+		min-height: 100%;
+		@include noScrollBar();
+	
+	}
+
+	@include screenMax('mobile') {
+        padding: 1rem 2.4rem;
+    }
+}

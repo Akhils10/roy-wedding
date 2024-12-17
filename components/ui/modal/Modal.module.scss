@@ -1,0 +1,79 @@
+@import "@/styles/imports";
+
+.modal_container {
+	position: fixed;
+	z-index: 1200;
+	inset: 0;
+	width: 100%;
+	height: 100vh;
+	overflow-y: hidden;
+	background-color: rgba(#000, 0.7);
+	cursor: default;
+	@include flex(center, center, column);
+	.modal {
+		width: 48rem;
+		min-height: 30rem;
+		max-height: 90vh;
+		max-width: 95%;
+		background-color: $col-white;
+		border-radius: 1.6rem;
+		padding: 2.4rem;
+		position: relative;
+		z-index: 1;
+		.header {
+			position: relative;
+			margin-bottom: 2.4rem;
+			.title {
+				h4 {
+					@extend %title-24;
+					font-weight: 600;
+				}
+			}
+		}
+		.closeModal_container {
+			position: absolute;
+			right: 2.5rem;
+			top: 2.9rem;
+			background-color: $col-purple-primary;
+			border-radius: 50%;
+			width: 2.2rem;
+			height: 2.2rem;
+			@extend %center;
+			cursor: pointer;
+			z-index: 1;
+			.closeModal {
+				position: relative;
+				transition: all 0.3s linear;
+				span {
+					height: 1rem;
+					width: 0.1rem;
+					border-radius: 25%;
+					background-color: $col-white;
+					transform: rotate(45deg);
+					display: block;
+					padding: 0;
+				}
+				span:last-child {
+					transform: rotate(-45deg);
+					margin-top: -1rem;
+				}
+			}
+		}
+		.body {
+			max-height: 80vh;
+			height: 100%;
+			overflow-y: scroll;
+			width: 100%;
+			@include noScrollBar;
+		}
+	}
+	.close_background {
+		position: absolute;
+		inset: 0;
+	}
+	@include screenMax("mobile") {
+		.modal {
+			width: 95%;
+		}
+	}
+}

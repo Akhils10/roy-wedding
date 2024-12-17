@@ -1,0 +1,40 @@
+#nprogress {
+	.bar {
+		background-color: $col-white !important;
+		height: 4px !important;
+	}
+
+	.peg {
+		box-shadow: none !important;
+	}
+}
+
+img {
+	width: 100%;
+	height: 100%;
+}
+
+svg {
+	width: 100%;
+	height: 100%;
+}
+
+section {
+	padding-inline: 6.5rem;
+}
+
+#loom-companion-mv3 {
+	display: none;
+}
+
+.gsap-marker-end,
+.gsap-marker-start,
+.gsap-marker-scroller-end,
+.gsap-marker-scroller-start {
+	display: none !important;
+}
+
+
+.react-images__view-image {
+	object-fit: contain !important;
+}

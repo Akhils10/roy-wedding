@@ -1,0 +1,35 @@
+@font-face {
+	font-family: "Princess Sofia";
+	src: url("/fonts/Princess_Sofia/PrincessSofia-Regular.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "EB Garamond";
+	src: url("/fonts/EB_Garamond/EBGaramond-VariableFont_wght.ttf") format("truetype");
+	font-weight: 400 800;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "EB Garamond";
+	src: url("/fonts/EB_Garamond/EBGaramond-Italic-VariableFont_wght.ttf")
+		format("truetype");
+	font-weight: 400 800;
+	font-style: italic;
+}
+
+section,
+article,
+blockquote,
+div,
+span,
+nav,
+p,
+ul,
+li,
+a {
+	font-size: 1.4rem;
+	line-height: 2.4rem;
+}

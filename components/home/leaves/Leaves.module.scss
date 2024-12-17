@@ -1,0 +1,81 @@
+@import "@/styles/imports";
+
+.leaves {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	max-width: 100%;
+	min-height: 100dvh;
+	pointer-events: none;
+	// overflow-x: hidden;
+	// overflow-y: unset;
+
+	.leaf {
+		position: absolute;
+		width: 5rem;
+		height: 5rem;
+		z-index: 1;
+		animation: fall linear infinite;
+		opacity: 0;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	@for $i from 1 through 15 {
+		.leaf:nth-child(#{$i}) {
+			left: calc(percentage(min(100%, random(100) / 100)) - 12rem);
+			animation-duration: #{random(8) + 7}s;
+			animation-delay: #{random(20)}s;
+		}
+	}
+
+	.leaf::nth-child(16) {
+		right: 12rem;
+		animation-duration: #{random(8) + 7}s;
+		animation-delay: #{random(20)}s;
+	}
+
+	@include screenMax("mobile") {
+		top: -16rem;
+		.leaf {
+			width: 5rem;
+			height: 5rem;
+		}
+
+		@for $i from 1 through 15 {
+			.leaf:nth-child(#{$i}) {
+				left: calc(percentage(min(100%, random(100) / 100)) - 6rem);
+				animation-duration: #{random(8) + 7}s;
+				animation-delay: #{random(20)}s;
+			}
+		}
+
+		.leaf::nth-child(16) {
+			right: 6rem;
+			animation-duration: #{random(8) + 7}s;
+			animation-delay: #{random(20)}s;
+		}
+	}
+}
+
+@keyframes fall {
+	0% {
+		transform: translateY(-100px) rotate(0deg);
+		opacity: 0;
+	}
+	10% {
+		opacity: 1;
+	}
+	90% {
+		opacity: 1;
+	}
+	100% {
+		transform: translateY(200vh) rotate(360deg);
+		opacity: 0;
+	}
+}

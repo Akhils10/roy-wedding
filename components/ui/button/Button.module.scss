@@ -1,0 +1,27 @@
+@import "@/styles/imports";
+
+.primary {
+	@extend %btn-primary;
+	position: relative;
+}
+
+.secondary {
+	@extend %btn-secondary;
+}
+
+.transparent {
+	@extend %btn-transparent;
+}
+
+.button {
+	-webkit-tap-highlight-color: transparent;
+	.button_icon {
+		position: relative;
+		width: 2.4rem;
+		height: 2.4rem;
+	}
+	.loader {
+		width: 2rem;
+		margin-right: 0.8rem;
+	}
+}
