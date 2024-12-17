@@ -12,6 +12,14 @@
 	.hero_container {
 		display: none;
 	}
+	.text_logo {
+		.logo_text {
+			font-family: "Princess Sofia", cursive;
+			font-size: 1.8rem;
+			line-height: 1.8rem;
+			font-weight: bold;
+		}
+	}
 	.container {
 		display: flex;
 		justify-content: center;
@@ -119,7 +127,7 @@
 				height: 100dvh;
 				z-index: 100;
 				transition: transform 0.3s ease-in-out;
-				background-image: url("../../../../public/home/couple.png");
+				background-image: url("../../../../public/home/couple-home-2.jpg");
 				background-repeat: no-repeat;
 				background-size: cover;
 				background-position: center;

@@ -16,10 +16,10 @@ const navItems = [
 		title: "Add Guest",
 		path: "/admin/guest-list/add",
 	},
-	{
-		title: "Scan Guest",
-		path: "/admin/validate-guest",
-	},
+	// {
+	// 	title: "Scan Guest",
+	// 	path: "/admin/validate-guest",
+	// },
 	{
 		title: "Registry",
 		path: "/admin/registry",
@@ -43,8 +43,8 @@ const Header = () => {
 		<header className={styles.header} data-animation="header">
 			<div className={styles.mobile_header}>
 				<div className={styles.small_row}>
-					<div className={styles.logo}>
-						<Image src="/header/logo-mobile.svg" fill alt="" />
+					<div className={styles.text_logo}>
+						<div className={styles.logo_text}>Y & R</div>
 					</div>
 
 					<div
